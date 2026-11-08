@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "id": "example-mod-information",
+  "title": "Example Mod",
+  "version": "1.0.0",
+  "requires_plugin": "ExampleMod.esp",
+  "articles": [
+    {
+      "id": "getting-started",
+      "is_overview": true,
+      "category": "Gameplay",
+      "subject": "Example Mod",
+      "title": "Getting started",
+      "text": "Explain where to begin and what to do.\n\nAdd a second paragraph here."
+    }
+  ]
+}

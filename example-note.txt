@@ -1,0 +1,10 @@
+My useful reminders
+
+Write or paste your own information here. Leave a blank line between paragraphs.
+
+## Travel
+- Bring supplies.
+- Add another reminder here.
+
+## Things to look up later
+Put more text here. No mod name or plugin filename is required.
