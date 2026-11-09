@@ -27,3 +27,13 @@ An empty or not-yet-created pack folder is valid. Invalid files are named on sta
 `NotesCheck.exe` is a developer fixture utility. Use a temporary fixture directory, never your personal UserNotes directory.
 
 For a runtime test, install the built DLL at `Data/SKSE/Plugins/SkyrimTutorials.dll` using a mod manager, install the separate prerequisites and launch Skyrim 1.5.97 through SKSE. Open **Mod Atlas → Browse**. Test empty-framework behaviour, then add the generic example or a real information pack, reload, search, and check My Notes keyboard focus and saving across a restart. The framework does not need a fixed game installation path or a particular modlist.
+
+## Multi-runtime build (optional)
+
+`tools/Convert-ModAtlas.ps1` patches `src/Plugin.cpp` (adds `SKSEPlugin_Version`, removes the 1.5.97 runtime gate) and builds one DLL per runtime: SE 1.5.97, AE 1.6.1170, GOG 1.6.1179, 1.7.104, plus a version-independent fallback. It packages them in a FOMOD zip that selects the DLL for the user's game version.
+
+```powershell
+pwsh tools\Convert-ModAtlas.ps1 -SourceDir . -OutDir dist
+```
+
+It refuses to run if the code starts using game addresses or CommonLibSSE. Not every runtime has been tested in game yet; please report results per runtime.
